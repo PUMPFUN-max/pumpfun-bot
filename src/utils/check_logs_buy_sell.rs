@@ -64,7 +64,6 @@ pub async fn process_logs(
                 if len_data >= 180 && logs_counted == 0 {
                     logs_counted = logs_counted + 1;
 
-                    // Ensure there's enough data
                     // Convert slices to arrays safely
                     if let Some(user_bytes) = log_decoded
                         .get(len_data - 32..len_data)
@@ -88,6 +87,7 @@ pub async fn process_logs(
                         }
                     }
                 } else if logs_counted > 0 {
+                    //get bonding curve data from the create txn directly...
                     let trade_event = TradeEvent::decode_trade_event(&log_decoded[8..]);
                     virtual_sol_reserves = trade_event.get_virtual_sol_reserves();
                     virtual_token_reserves = trade_event.get_virtual_token_reserves();
