@@ -46,4 +46,4 @@ For any questions, suggestions, or feedback, please reach out to the developer:
 
 - **All contacts are in my profile**
 
-Happy Trading!
+Happy Learning!
